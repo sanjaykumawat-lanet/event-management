@@ -1,24 +1,33 @@
-import {
-    LOGIN,
-    REGISTER
-} from "../action/uiActions";
+import * as Actions from "../action/uiActions";
 
 const intialState = {
-    isLoggedIn: false,
+
+  eventDailog: false,
+  organiserDialog: false
 };
 
 const uiReducer = (state = intialState, action) => {
-    switch (action.type) {
-        case LOGIN:
-            console.log("check login reducer");
-            return { ...state, isLoggedIn: true };
-        default:
-            return state;
+   switch (action.type) {
+   case Actions.TOGGLE_EVENT_DIALOG:{
+     return {
+       ...state,
+       eventDailog:!state.eventDailog
+     }
+   }   
 
-            case REGISTER:
-            console.log("check login reducer");
-            return { ...state, isLoggedIn: true };
+   case Actions.TOGGLE_ORGANISER_DIALOG:{
+    return {
+      ...state,
+      organiserDialog:!state.organiserDialog
     }
+  }   
+     
+    default:
+      return state;
+   
+    
+  }
+
 };
 
 export default uiReducer;

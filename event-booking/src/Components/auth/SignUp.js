@@ -8,121 +8,103 @@ import Typography from "@material-ui/core/Typography";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { register } from "../store/action/uiActions";
+import { register } from "../store/action/authActions";
 // import "./Login.css";
 import { bindActionCreators } from "redux";
 import LockTwoToneIcon from "@material-ui/icons/LockTwoTone";
-import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
-import { IconButton } from "@material-ui/core";
+import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
+import {
+  Avatar,
+  Checkbox,
+  Container,
+  CssBaseline,
+  Grid,
+  IconButton,
+} from "@material-ui/core";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 const axios = require("axios");
 const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "25ch",
-    },
+  paper: {
+    marginTop: theme.spacing(8),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(3),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
   },
 }));
 
-const BasicTextFields = (props) => {
-  const { errors, touched, handleBlur, handleChange, values, handleSubmit, register } =
+const Signup = (props) => {
+  const { errors, touched, handleBlur, handleChange, values, handleSubmit } =
     props;
   const classes = useStyles();
 
-  useEffect(function () {
-    register();
-  }, []);
-
-  // const validationSchema = Yup.object({
-  //   name: Yup.string().required("Enter name "),
-  //   email: Yup.string().email().required("ENter"),
-  //   password: Yup.string().required("ENter"),
-  // });
-
-  // const formik = useFormik({
-  //   initialValues: {
-  //     name: "",
-  //     email: "",
-  //     password: "",
-  //   },
-  //   validationSchema: (props) =>
-  //     Yup.object().shape({
-  //       email: Yup.string().email("Enter valid email"),
-  //     }),
-  // });
-  // console.log(formik.errors);
-  // const handleSubmit = (evt) => {
-  //   evt.preventDefault();
-  //   const base_url = "http://localhost:3001/users/register";
-  //   axios
-  //     .post(base_url, values)
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.response);
-  //     });
-  //   // console.log(JSON.stringify(data));
-  // };
-  // console.log("errors", errors);
   const checkDisable = () => {
-    if (errors.email || errors.name || errors.password) {
+    if (errors.email || errors.first_name || errors.password || errors.lname) {
       return true;
     } else return false;
   };
   return (
-    <>
-      {/* <Header></Header> */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          width: "100%",
-          textAlign: "center",
-        }}
-      >
-        <div
-          style={{
-            backgroundColor: "White",
-            height: "70%",
-            width: "50%",
-            borderRadius: "10px",
-            boxShadow: "2px 2px 5px black",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Typography component="div">
-          <Typography variant="h5" className={classes.title}>
-            REGISTRATION
-          </Typography>        
-
-            <form className={classes.center} autoComplete="off">
-              <div>
-                <TextField
-                  style={{ width: "80%" }}
-                  error
-                  id="name"
-                  label="Name"
-                  name="name"
-                  variant="outlined"
-                  margin="dense"
-                  value={values.name}
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  error={!!touched.name && !!errors.name}
-                  helperText={touched.name && errors.name}
-                  fullWidth
-                  required
-                />
-              </div>
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Sign up
+        </Typography>
+        <form className={classes.center} autoComplete="off">
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
               <TextField
-                style={{ width: "80%" }}
-                error
+                autoComplete="first_name"
+                id="first_name"
+                label="First Name"
+                name="first_name"
+                variant="outlined"
+                margin="dense"
+                value={values.first_name}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                error={!!touched.first_name && !!errors.first_name}
+                helperText={touched.first_name && errors.first_name}
+                autoFocus
+                fullWidth
+                required
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                autoComplete="last_name"
+                id="last_name"
+                label="Last Name"
+                name="last_name"
+                variant="outlined"
+                margin="dense"
+                value={values.last_name}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                error={!!touched.last_name && !!errors.last_name}
+                helperText={touched.last_name && errors.last_name}
+                fullWidth
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                autoComplete="email"
                 id="email"
                 name="email"
                 label="Email"
@@ -133,21 +115,17 @@ const BasicTextFields = (props) => {
                 onBlur={handleBlur}
                 error={!!touched.email && !!errors.email}
                 helperText={touched.email && errors.email}
-                // error={formik.errors.email}
                 onChange={handleChange}
-                // value={formik.values.email}
                 fullWidth
                 required
               />
-              {/* </div> */}
-              {/* <div style={{ margin: "10px" }}> */}
+            </Grid>
+
+            <Grid item xs={12}>
               <TextField
-                style={{ width: "80%" }}
-                error
                 id="password"
                 label="Password"
                 type="password"
-                requiredlabel="Password"
                 variant="outlined"
                 margin="dense"
                 onChange={handleChange}
@@ -156,80 +134,80 @@ const BasicTextFields = (props) => {
                 error={!!touched.password && !!errors.password}
                 helperText={touched.password && errors.password}
                 required
-                fullWidth   
+                fullWidth
+                autoComplete="current-password"
               />
-              
-              {/* </div> */}
-              <div style={{ margin: "15px" }}>
-                <Button
-                  style={{ width: "80%" }}
-                  onClick={handleSubmit}
-                  disabled={checkDisable()}
-                  value="Submit"
-                  variant="contained"
-                  color="primary"
-                  disableElevation
-                  fullWidth
-                >
-                  <LockTwoToneIcon />
-                </Button>
-              </div>
-              <Link to="/SignIn" variant="body2">
-                Existing Account ? Sign In here
+            </Grid>
+
+            <Grid item xs={12}>
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                label="Accept."
+              />
+            </Grid>
+          </Grid>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+            onClick={handleSubmit}
+          >
+            Sign Up
+          </Button>
+          <Grid container justifyContent="flex-end">
+            <Grid item>
+              <Link href="admin/signin" variant="body2">
+                Already have an account? Sign in
               </Link>
-            </form>
-          </Typography>
-        </div>
+            </Grid>
+          </Grid>
+        </form>
       </div>
-    </>
+    </Container>
   );
 };
+
 const Form = withFormik({
   enableReinitialize: false,
   mapPropsToValues: (props) => ({
-    name: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
   }),
   validationSchema: (props) =>
     Yup.object().shape({
       email: Yup.string().email("Enter valid email").required(),
-      name: Yup.string().required("Enter valid name"),
+      first_name: Yup.string().required("Enter valid first_name"),
+      last_name: Yup.string().required("Enter valid last_name"),
       password: Yup.string().required("Enter valid password"),
     }),
   async handleSubmit(values, { props }) {
-    const base_url = "http://localhost:3001/users/register";
-    axios
-      .post(base_url, values)
-      .then((response) => {
-        // props.register();
-        props.history.push("/Login");
-        console.log(values);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    try {
+      await props.register(values);
+      props.history.push("/admin/signin");
+    } catch (error) {}
   },
   displayName: "BasicForm",
-})(BasicTextFields);
+})(Signup);
 
 const mapStateToProps = (state) => {
-    return {
-      employeeList: state.ui.employeeList,
-    };
-  };
-  const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators(
-      {
-        register,
-      },
-      dispatch
-    );
-    // return {
-    //   setEmployeeList: (data) => dispatch(login(data)),
-    // };
-  };
-  
+  return {};
+};
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(
+    {
+      register,
+    },
+    dispatch
+  );
+  // return {
+  //   setEmployeeList: (data) => dispatch(login(data)),
+  // };
+};
+
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Form));
-  
+
 // export default BasicTextFields;

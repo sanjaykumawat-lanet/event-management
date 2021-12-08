@@ -4,39 +4,77 @@ import { Carousel } from "react-responsive-carousel";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-    image: {
-        height: "500px",
-        width: "100%",
-      },
-      carousel: {
-        justifyContent: "center",
-        "& .thumbs-wrapper": {
-          display: "none",
-        },
-        "& .carousel-status": {
-          display: "none",
-        },
-      },
-  }));
+  // imageDiv: {
+  //   height: "300px",
+  //   // width: "100%",
+  // },
+  // image: {
+  //   // height: "500px",
+  //   // width: "100%",
+  //   width: "100%",
+  //   minHeight: "100%",
+  // },
+  img: {
+    maxWidth: "100%",
+    height: "100%",
+  },
 
-  const Slider = (props) => {
-    const {  } =
-      props;
-    const classes = useStyles();
-    // const [expanded, setExpanded] = React.useState(false);
-  
-return (
+  item: {
+    // width: "1200px",
+    // minHeight: "500px",
+    // maxHeight: "auto",
+  },
+  carousel: {
+    height: "500px",
+    justifyContent: "center",
+    "& .thumbs-wrapper": {
+      display: "none",
+    },
+    "& .carousel-status": {
+      display: "none",
+    },
+    "& .carousel.carousel-slider":{
+      height: "500px",
+    },
+    "& .carousel .slider":{
+      height: "500px",
+    },
+  },
+}));
 
-<div >
-      <Carousel infiniteLoop autoPlay className={classes.carousel}>
-        <div className={classes.image}>
-          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/79d60316191875.562a694ddaa84.jpg" alt="slider1" />
+const Slider = (props) => {
+  const {} = props;
+  const classes = useStyles();
+  // const [expanded, setExpanded] = React.useState(false);
+
+  return (
+    <div>
+      <Carousel
+        infiniteLoop
+        autoPlay={false}
+        className={classes.carousel}
+        dynamicHeight={true}
+      >
+        <div className={classes.item}>
+          <img
+            src="https://www.kreativdistrikt.com/wp-content/uploads/2020/02/cover.jpg"
+            alt="slider1"
+            className={classes.img}
+          />
         </div>
-        <div className={classes.image}>
-          <img src="https://eventornado-files.ams3.cdn.digitaloceanspaces.com/blog/the-rise-of-online-hackathons.png" alt="slider1"></img>
+        <div className={classes.item}>
+          <img
+            src="https://miro.medium.com/max/2000/1*AXF8IYKqC3Y7JxYRaUrCPQ.png"
+            alt="slider1"
+            className={classes.img}
+          ></img>
         </div>
-        <div className={classes.image}>
-          <img src="https://graphicriver.img.customer.envatousercontent.com/files/311785868/preview.jpg?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=496442bd4867073b055c338e9db094d2" alt="slider1"></img>
+        <div className={classes.item}>
+          <img
+            src="https://resources.scrumalliance.org/uploads/2021/5/13/Hachathon-1ICGpr3rr0uiOtsrPSQu9g.jpg"
+            alt="slider1"
+            className={classes.img}
+          ></img>
         </div>
         {/* <div className={classes.image}>
           <img src="../assets/images/SLIDER4.jpg" alt="slider1"></img>
@@ -47,7 +85,7 @@ return (
       </Carousel>
       {/* <div className={classes.bigDiv}></div> */}
     </div>
-)
-  };
+  );
+};
 
-  export default Slider
+export default Slider;
