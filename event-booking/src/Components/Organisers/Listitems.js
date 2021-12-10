@@ -8,6 +8,10 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import PeopleIcon from "@material-ui/icons/People";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import { mergeClasses } from "@material-ui/styles";
+<<<<<<< HEAD
+import { Link } from "react-router-dom";
+=======
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
 
 export const mainListItems = (
   <div>
@@ -16,14 +20,26 @@ export const mainListItems = (
       >
         <DashboardIcon />
       </ListItemIcon>
+<<<<<<< HEAD
+      <Link to ="/organiser/dashboard">
       <ListItemText primary="Dashboard" />
+      </Link>
+=======
+      <ListItemText primary="Dashboard" />
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
     </ListItem>
     <ListItem button>
       <ListItemIcon
       >
         <PeopleIcon />
       </ListItemIcon>
+<<<<<<< HEAD
+      <Link to ="/organiser/event">
       <ListItemText primary="Events" />
+      </Link>
+=======
+      <ListItemText primary="Events" />
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
     </ListItem>
     <ListItem button>
       <ListItemIcon
@@ -31,9 +47,15 @@ export const mainListItems = (
       >
         <BarChartIcon />
       </ListItemIcon>
+<<<<<<< HEAD
+      <Link to ="/organiser/user">
+       <ListItemText primary="Users"/>
+      </Link>
+=======
 
       <ListItemText primary="Users"
       />
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
     </ListItem>
   </div>
 );
@@ -86,4 +108,8 @@ export const mainListItems = (
 //   </div>
 // }
 
+<<<<<<< HEAD
 // export default mainListItems;
+=======
+// export default mainListItems;
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92

@@ -21,21 +21,38 @@ import ShareIcon from "@material-ui/icons/Share";
 import Carousel from "react-elastic-carousel";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+<<<<<<< HEAD
+import UpcomingEvent from "./UpcomingEvent";
+import ControlledAccordions from "./Accordin"
+import transitions from "@material-ui/core/styles/transitions";
+
+=======
 import UpcomingEvent from "./UpcomingEvent"
 import transitions from "@material-ui/core/styles/transitions";
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
   },
+<<<<<<< HEAD
+
+  card: {
+    height: "500px",
+=======
  
  
   card: {
     height: "100%",
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
     display: "flex",
     flexDirection: "column",
     boxShadow: "1px 2px 5px grey",
     margin: "10px",
+<<<<<<< HEAD
+    borderRadius: "10px",
+=======
   
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
   },
   cardMedia: {
     paddingTop: "56.25%",
@@ -43,7 +60,10 @@ const useStyles = makeStyles((theme) => ({
   },
   cardContent: {
     flexGrow: 1,
+<<<<<<< HEAD
+=======
    
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -64,9 +84,17 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+<<<<<<< HEAD
+  btnHover: {
+    color:"white",
+        transform: "scale(1.001)",
+        background: "black"
+  },
+=======
   btnHover:{
     
   }
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
 }));
 const breakpoints = [
   { width: 1, itemsToShow: 1 },
@@ -128,19 +156,37 @@ const Album = (props) => {
   // ];
 
   return (
+<<<<<<< HEAD
+    <div
+    // style={{ backgroundColor: "#c8d8e4" }}
+    >
+      {/* <CssBaseline /> */}
+      <div className="ml-16 ">
+        <Typography variant="h3" className="pb-8 pt-8">
+=======
     <div style={{backgroundColor:"#c8d8e4"}}>
       {/* <CssBaseline /> */}
       <div className="ml-16 " >
         <Typography variant="h3" className="pb-8 pt-8" >
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
           Explore Events
         </Typography>
       </div>
       <div classname="flex-row mb-8">
         <Button
+<<<<<<< HEAD
+          variant="outlined"
+          className={`${classes.btnHover}`}
+          style={{
+            marginLeft: "70px",
+            borderRadius: "10px",
+            color:"white"
+=======
           variant="outlined"  className={`${classes.btnHover}`} 
           style={{
             marginLeft: "70px",
             borderRadius: "10px",
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
           }}
           color="primary"
         >
@@ -148,6 +194,10 @@ const Album = (props) => {
         </Button>
         <Button
           variant="outlined"
+<<<<<<< HEAD
+          className={`${classes.btnHover}`}
+=======
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
           style={{
             marginLeft: "10px",
             borderRadius: "10px",
@@ -200,7 +250,14 @@ const Album = (props) => {
                       Edit
                     </Button>
                   </CardActions> */}
+<<<<<<< HEAD
+              <CardActions
+                disableSpacing
+                style={{ position: "absolute", bottom: "0" }}
+              >
+=======
               <CardActions disableSpacing>
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
                 <Button color="primary" variant="contained" href="/BookingForm">
                   Book Now
                 </Button>
@@ -252,6 +309,15 @@ const Album = (props) => {
             // </div>
           ))}
         </Carousel>
+<<<<<<< HEAD
+        
+      </div>
+      {/* End footer */}
+      <UpcomingEvent />
+      <ControlledAccordions />
+    </div>
+  );
+=======
 
       </div>
       {/* End footer */}
@@ -260,6 +326,7 @@ const Album = (props) => {
     
   );
  
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
 };
 
 const mapStateToProps = (state) => {

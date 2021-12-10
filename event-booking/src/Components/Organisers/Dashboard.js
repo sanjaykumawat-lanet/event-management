@@ -33,6 +33,11 @@ import { bindActionCreators } from "redux";
 import SimpleDrawer from "../Ui/SimpleDrawer";
 import Chart from "./Chart";
 import Events from "./Eventslist";
+<<<<<<< HEAD
+import New from "./New";
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+=======
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
 
 const drawerWidth = 240;
 
@@ -75,7 +80,11 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+<<<<<<< HEAD
+    color:"white"
+=======
     // color:"#800000"
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
   },
   drawerPaper: {
     position: "relative",
@@ -117,11 +126,19 @@ const useStyles = makeStyles((theme) => ({
     height: 240,
   },
   customColor: {
+<<<<<<< HEAD
+    backgroundColor: "#FFFFFF",
+=======
     backgroundColor: "#800000",
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
   },
 }));
 
 const Dashboard = (props) => {
+<<<<<<< HEAD
+  console.log("props",props);
+=======
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
   const contentComponent  = props.match.params.subComponent
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
@@ -140,6 +157,12 @@ const Dashboard = (props) => {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   const renderContent = () => {
+<<<<<<< HEAD
+    console.log("conentComponent:",contentComponent)
+    switch (contentComponent) {
+      case "dashboard":
+        return <div><New /></div>
+=======
     console.log("conentComponent: ", contentComponent)
     switch (contentComponent) {
       case "dashboard":
@@ -150,6 +173,7 @@ const Dashboard = (props) => {
           height: '100vh',
          
         }}>dashboard</div>
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
       case "event":
         return <div><Events /></div>
         case "user":
@@ -159,7 +183,11 @@ const Dashboard = (props) => {
 
   return (
     <div className={classes.root}>
+<<<<<<< HEAD
+      {/* <CssBaseline /> */}
+=======
       <CssBaseline />
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, open && classes.appBarShift)}
@@ -184,6 +212,10 @@ const Dashboard = (props) => {
             noWrap
             className={classes.title}
           >
+<<<<<<< HEAD
+            <SupervisorAccountIcon style={{margin:"5px"}} />
+=======
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
             Organiser
           </Typography>
 
@@ -205,6 +237,53 @@ const Dashboard = (props) => {
         <Divider />
         <List>{mainListItems}</List>
         <Divider />
+<<<<<<< HEAD
+      
+      </Drawer>
+      <main className={classes.content}>
+        {renderContent()} 
+        </main>
+        {/* <div className="flex justify-end mt-4 mr-4">
+          <Button
+            style={{ backgroundColor: "#263238" }}
+            color="primary"
+            variant="contained"
+            onClick={handleEventClick}
+          >
+            Add Event
+          </Button>
+        </div> */}
+        {/* <div className={classes.appBarSpacer} /> */}
+        {/* <Container maxWidth="lg" className={classes.container}>
+          <Grid container spacing={3}> */}
+            {/* Recent Deposits */}
+
+            {/* <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <Custompanel title="Events" count={3} actionText="Event Count" />
+              </Paper>
+            </Grid> */}
+            {/* <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <Custompanel title="Users" count={3} actionText="User Count" />
+              </Paper>
+            </Grid> */}
+            {/* Recent Orders */}
+            {/* <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                {/* <Userlist /> */}
+              {/* </Paper> 
+            </Grid>
+          </Grid>
+        </Container> */}
+      
+      
+
+      {/* // code for simple dialog */}
+      {/* <SimpleDrawer open={props.eventDailog}>
+        <EventForm />
+      </SimpleDrawer> */}
+=======
         <List>{ }</List>
       </Drawer>
       <main className={classes.content}>
@@ -215,6 +294,7 @@ const Dashboard = (props) => {
       <SimpleDrawer open={props.eventDailog}>
         <EventForm />
       </SimpleDrawer>
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
     </div>
   );
 };
@@ -244,6 +324,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
 // //   return <div>Dashboard component works !</div>;
 // // };
 
+<<<<<<< HEAD
+=======
 // // export default Dashboard;
 
 // import React from "react";
@@ -502,3 +584,4 @@ export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
 // };
 
 // export default Dashboard;
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
