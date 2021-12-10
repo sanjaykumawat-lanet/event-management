@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { Button } from "@material-ui/core";
+<<<<<<< HEAD
 import Header from "./Header";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { Country, State, City } from "country-state-city";
@@ -494,12 +495,164 @@ const BookingForm = (props) => {
               Cancel
             </Button>
           </div>
+=======
+
+export default function AddressForm() {
+  return (
+    <div className="flex flex-col justify-center" style={{backgroundColor:"#2b6777"}} >
+      <Typography
+        variant="h4"
+        style={{
+          textAlign: "center",
+          paddingTop: "30px",
+          paddingBottom: "10px",
+          color:"white"
+        }}
+      >
+        Booking Form
+      </Typography>
+      <div container className="flex flex-col justify-center w-3/4 m-auto ">
+        <div className="flex mt-8 ">
+          <TextField
+            style={{ marginRight: "10px"}}
+            required
+            fullWidth
+            id="firstName"
+            name="firstName"
+            label="First name"
+            autoComplete="given-name"
+            variant="outlined"
+            autoFocus
+          />
+
+          <TextField
+            required
+            fullWidth
+            id="lastName"
+            name="lastName"
+            label="Last name"
+            // fullWidth
+            autoComplete="family-name"
+            variant="outlined"
+          />
+        </div>
+        <div className="flex mt-8 ">
+          <TextField
+            style={{ marginRight: "10px" }}
+            variant="outlined"
+            fullWidth
+            required
+            id="address1"
+            name="address1"
+            label="Address line 1"
+            // fullWidth
+            autoComplete="shipping address-line1"
+          />
+
+          <TextField
+            variant="outlined"
+            fullWidth
+            id="address2"
+            name="address2"
+            label="Address line 2"
+            // fullWidth
+            autoComplete="shipping address-line2"
+          />
+        </div>
+        <div className="flex mt-8">
+          <TextField
+            style={{ marginRight: "10px" }}
+            variant="outlined"
+            fullWidth
+            required
+            id="country"
+            name="country"
+            label="Country"
+            // fullWidth
+            autoComplete="shipping country"
+          />
+
+          <TextField
+            variant="outlined"
+            fullWidth
+            required
+            id="city"
+            name="city"
+            label="City"
+            variant="outlined"
+            // fullWidth
+          />
+        </div>
+        <div className="flex mt-8">
+          <TextField
+            style={{ marginRight: "10px" }}
+            variant="outlined"
+            fullWidth
+            id="state"
+            name="state"
+            label="State/Province/Region"
+            // fullWidth
+          />
+
+          <TextField
+            required
+            variant="outlined"
+            fullWidth
+            id="zip"
+            name="zip"
+            label="Zip / Postal code"
+            // fullWidth
+            autoComplete="shipping postal-code"
+          />
+        </div>
+        <div className="p-4 my-4">
+          <FormControlLabel
+            control={
+              <Checkbox color="secondary" name="saveAddress" value="yes" />
+            }
+            label="Use this address for payment details"
+          />
+        </div>
+        <div className="flex p-8 justify-center items-center">
+          <Button
+            style={{
+              alignItems: "center",
+              justifyItems: "center",
+              backgroundColor: "#263238",
+            }}
+            color="primary"
+            // className="m-4"
+            variant="contained"
+            style={{backgroundColor:" #c8d8e4"}}
+            // onClick={() => {
+            //   addAddressHandler();
+            // }}
+            // disabled={checkDisable()}
+            // disabled={!dirty || isSubmitting || !isValid}
+          >
+            Book Now
+          </Button>
+          <Button
+            color="#263238"
+            // className="m-4"
+            style={{
+              margin: 5,
+            }}
+            variant="outlined"
+            // onClick={() => {
+            //   clickHandler();
+            // }}
+          >
+            Cancel
+          </Button>
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
         </div>
       </div>
     </div>
   );
 }
 
+<<<<<<< HEAD
 function checkRequired(props) {
   console.log("props.activeStep",props.activeStep);
   console.log("props.addressDrawer",props.addressDrawer);
@@ -678,6 +831,8 @@ const mapDispatchToProps = (dispatch) => {
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Form));
 
 
+=======
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
 // import React from "react";
 // import Button from "@material-ui/core/Button";
 // import { makeStyles } from "@material-ui/core/styles";

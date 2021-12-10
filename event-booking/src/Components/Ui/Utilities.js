@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Card from "./Card";
 import Slider from "./slider";
 import { Fragment } from "react";
@@ -18,3 +19,22 @@ const Utilites = () => {
 };
 
 export default Utilites;
+=======
+import Card from "./Card";
+import Slider from "./slider";
+import { Fragment } from "react";
+
+const Utilites = () => {
+  return (
+    <div>
+      <div className="">
+        <Slider />
+      </div>
+
+      <Card />
+    </div>
+  );
+};
+
+export default Utilites;
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92

@@ -20,7 +20,11 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 // import Slider from "../Ui/slider";
 import SearchIcon from "@material-ui/icons/Search";
 import EventAvailableSharpIcon from "@material-ui/icons/EventAvailableSharp";
+<<<<<<< HEAD
 import { useHistory } from "react-router";
+=======
+
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -57,7 +61,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+<<<<<<< HEAD
     color: "black  ",
+=======
+    color:"black  "
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
   },
   inputRoot: {},
   customColor: {
@@ -81,8 +89,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MenuAppBar = (props) => {
+<<<<<<< HEAD
   let history = useHistory();
 
+=======
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -136,15 +147,20 @@ const MenuAppBar = (props) => {
             <MenuIcon />
           </IconButton> */}
 
+<<<<<<< HEAD
           <Typography
             variant="h6"
             className={classes.title}
             style={{ color: "black" }}
           >
+=======
+          <Typography variant="h6" className={classes.title} style={{color:"black"}}>
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
             <EventAvailableSharpIcon /> Event Booking
           </Typography>
           {/* <Typography variant="h6">Blog</Typography> */}
           <div className="shadow-2xl bg-white-900 border rounded-lg">
+<<<<<<< HEAD
             <div className={classes.search} style={{ boxShadow: "10px" }}>
               <div className={classes.searchIcon} style={{ boxShadow: "50px" }}>
                 <SearchIcon />
@@ -163,12 +179,34 @@ const MenuAppBar = (props) => {
           {isLoggedIn && (
             <Button
               style={{ margin: "0 10px", color: "black" }}
+=======
+          <div className={classes.search} style={{boxShadow:"10px"}}>
+            <div className={classes.searchIcon} style={{boxShadow:"50px"}} >
+              <SearchIcon />
+            </div>
+            <InputBase
+             style={{boxShadow:"50px"}}
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ "aria-label": "search" }}
+            />
+          </div>
+          </div>
+          {isLoggedIn && (
+            <Button
+
+              style={{ margin: "0 10px", color:"black" }}
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
               variant="contained"
               onClick={handleClickOpen}
             >
               <PersonAddTwoToneIcon />
             </Button>
           )}
+<<<<<<< HEAD
 
           <Button
             style={{ color: "black" }}
@@ -195,6 +233,35 @@ const MenuAppBar = (props) => {
             SignUp
           </Button>
 
+=======
+          {!isLoggedIn && (
+            <Button
+            style={{ color:"black" }}
+              color="primary"
+              // href="/SignIn"
+              onClick={() => props.history.push("/SignIn")}
+            >
+              <IconButton color="inherit">
+                <LockOpen />
+              </IconButton>
+              SignIn
+            </Button>
+          )}
+          {!isLoggedIn && (
+            <Button
+            style={{ color:"black" }}
+              color="inherit"
+              // variant="contained"
+              // href="/SignUp"
+              onClick={() => props.history.push("/SignUp")}
+            >
+              <IconButton color="inherit">
+                <LockOutlinedIcon />
+              </IconButton>
+              SignUp
+            </Button>
+          )}
+>>>>>>> 9e410e71bb6bd7218c31ebe9599ac780cad34a92
           {isLoggedIn && (
             <Button
               style={{ margin: "0 10px" }}
